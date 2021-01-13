@@ -117,3 +117,16 @@ footer {
     }
 
   }
+
+  .main-section input{
+      display: none;
+  }
+  .main-section img{
+      width: 200px;
+      height: 200px;
+  }
+  
+  input:checked + img{
+      border: solid 2px black;
+      border-radius: 40px;
+  }
