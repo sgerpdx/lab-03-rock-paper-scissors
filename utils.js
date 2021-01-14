@@ -3,6 +3,11 @@ const paper = 'paper';
 const rock = 'rock';
 const scissors = 'scissors';
 
+const winsDisplay = document.getElementById('times-won');
+const totalsDisplay = document.getElementById('times-played');
+const tiesDisplay = document.getElementById('times-draw');
+const lossDisplay = document.getElementById('times-lost');
+
 export function testIfWin(userGuess, compChoice) {
     if (userGuess === compChoice) return 'draw';
     if (userGuess === rock && compChoice === scissors) return 'win';
@@ -22,10 +27,15 @@ export function setElementStrings(numOne, numTwo, numThree, numFour) {
     let drawString = `You tied ${numThree} times!`;
     let lossString = `You lost ${numFour} times!`;
 
-    //display the strings for wins, total, and draws
-    winsDisplay.textContent = winString;
-    totalsDisplay.textContent = totalString;
-    tiesDisplay.textContent = drawString;
-    lossDisplay.textContent = lossString;
+    return winString, totalString, drawString, lossString;
+}
+
+
+export function setDisplays(string1, string2, string3, string4) {
+    //display the strings for wins, total, and draw
+    winsDisplay.textContent = string1;
+    totalsDisplay.textContent = string2;
+    tiesDisplay.textContent = string3;
+    lossDisplay.textContent = string4;
 
 }

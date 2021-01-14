@@ -1,13 +1,10 @@
 // import functions and grab DOM elements
-import { testIfWin, setElementStrings } from './utils.js';
+import { testIfWin, setElementStrings, setDisplays } from './utils.js';
 import { getRandThrow } from './get-random-throw.js';
 
 const playButton = document.getElementById('play-button');
 const resetButton = document.getElementById('reset-button');
-const winsDisplay = document.getElementById('times-won');
-const totalsDisplay = document.getElementById('times-played');
-const tiesDisplay = document.getElementById('times-draw');
-const lossDisplay = document.getElementById('times-lost');
+
 const compDisplay = document.getElementById('comp-threw');
 const playerDisplay = document.getElementById('player-threw');
 
@@ -60,6 +57,9 @@ playButton.addEventListener('click', () => {
         totalLosses++;
     }
     setElementStrings(totalWins, totalPlays, totalTies, totalLosses);
+
+    setDisplays(setElementStrings(totalWins, totalPlays, totalTies, totalLosses)[0], setElementStrings(totalWins, totalPlays, totalTies, totalLosses)[1], setElementStrings(totalWins, totalPlays, totalTies, totalLosses)[2], setElementStrings(totalWins, totalPlays, totalTies, totalLosses)[3]);
+
 });
 
 resetButton.addEventListener('click', () => {
