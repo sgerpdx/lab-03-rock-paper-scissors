@@ -25,6 +25,7 @@ let totalWins = 0;
 let totalTies = 0;
 let totalLosses = 0;
 
+console.log('we have deployment');
 // set event listeners to update state and DOM
 function convertCompNumToValue(getRandThrow){
     if (getRandThrow === 0){
