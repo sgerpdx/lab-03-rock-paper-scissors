@@ -7,6 +7,8 @@ const winsDisplay = document.getElementById('times-won');
 const totalsDisplay = document.getElementById('times-played');
 const tiesDisplay = document.getElementById('times-draw');
 const lossDisplay = document.getElementById('times-lost');
+const compDisplay = document.getElementById('comp-threw');
+const playerDisplay = document.getElementById('player-threw');
 
 // initialize state
 //default string values to display when user clicks reset button
@@ -45,6 +47,7 @@ function setElementStrings(){
     totalsDisplay.textContent = totalString;
     tiesDisplay.textContent = drawString; 
     lossDisplay.textContent = lossString;
+    
 }
 
 playButton.addEventListener('click', () => {
@@ -53,14 +56,15 @@ playButton.addEventListener('click', () => {
     //increment the total plays
     //set comps choice to the random number returned from getRandThrow()
     const selectedRadioButton = document.querySelector('input[type="radio"]:checked');
-    const userGuess = selectedRadioButton.value;
+    const userThrow = selectedRadioButton.value;
     totalPlays++;
     let compChoice = convertCompNumToValue(getRandThrow());
-
+    compDisplay.textContent = `Computer threw: ${compChoice}`;
+    playerDisplay.textContent = `You threw: ${userThrow}`;
     //by default the user will guess the incorrect answer
-    if (testIfWin(userGuess, compChoice) === 'win') {
+    if (testIfWin(userThrow, compChoice) === 'win') {
         totalWins++;
-    } else if (testIfWin(userGuess, compChoice) === 'draw'){
+    } else if (testIfWin(userThrow, compChoice) === 'draw'){
         totalTies++;
     } else {
         totalLosses++;

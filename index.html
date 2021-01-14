@@ -14,35 +14,44 @@
 
 <body>
     <header>
+        <h2>The Spookiest Throw</h2>
         <div class="gutter-right logo">
+           
             <img src="assets/big-logo.png"/>
         </div>
     </header>
     <main>
         <section class="main-section">
             <p>Game will start once you select a picture and select the button to throw </p>
-            <p>From top to bottom you have rock, paper, scissors</p>
-            <label>
+            <p>paper beats rock, rock beats scissors, scissors beats papers</p>
+            <label class="rock">
+                <span class="select-label">Renegade Rock</span>
                 <input type="radio" name="rps" value="rock" checked>
                 <img width="200px" src="http://www.allwrestlingsuperstars.com/wp-content/uploads/2016/10/Rock-Image.jpg" alt="">
             </label>
-            <label>
+            <label class="paper">
+                <span class="select-label">Perilous Paper</span>
                 <input type="radio" name="rps" value="paper">
                 <img width='200px'src="https://gazettereview.com/wp-content/uploads/2017/03/Toilet-Paper.png" alt="">
             </label>
-            <label>
+            <label class="scissors">
+                <span class="select-label"> Screamin' Scissors</span>
                 <input type="radio" name="rps" value="scissors"> 
                 <img width="200px" src="http://www.baltimoresbest.net/wp-content/uploads/2013/09/Scissors-Ceremonial-Ribbon-Cutting.jpg" alt="">
             </label>
             <button id="play-button">Throw rock, paper, scissors</button>
+            <button id="reset-button">Reset the scores</button>
             
         </section>
         <section class="result-section">
-            <span id="times-won">Wins will show here</span>
-            <span id="times-played">Total plays will show here</span>
-            <span id="times-draw">Times tied will show here</span>
-            <span id="times-lost">Times lost displays here</span>
-            <button id="reset-button">Reset the scores</button>
+            <p>Gameboard</p>
+            <span id="times-won"></span>
+            <span id="times-played"></span>
+            <span id="times-draw"></span>
+            <span id="times-lost"></span>
+            <span id="comp-threw"></span>
+            <span id="player-threw"></span>
+           
         </section>
     </main>
     <footer>
