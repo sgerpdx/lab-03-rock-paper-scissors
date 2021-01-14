@@ -13,10 +13,10 @@ const playerDisplay = document.getElementById('player-threw');
 // initialize state
 //default string values to display when user clicks reset button
 const defaultStrings = [
-    'Wins will show here', 
-    'Total plays will show here', 
-    'Times tied will show here', 
-    'Times lost displays here'];
+    'Wins go here, if you win at all muahaha', 
+    'Plays go here if you dare to go again', 
+    'If you TIED its because I didnt try', 
+    'Times lost goes here, RIPieces'];
 
 // initialize counts for totals
 let totalPlays = 0;
@@ -81,4 +81,6 @@ resetButton.addEventListener('click', () => {
     totalsDisplay.textContent = defaultStrings[1];
     tiesDisplay.textContent = defaultStrings[2]; 
     lossDisplay.textContent = defaultStrings[3];
+    compDisplay.textContent = '';
+    playerDisplay.textContent = '';
 });

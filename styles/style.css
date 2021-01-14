@@ -173,3 +173,10 @@ button{
 .select-label{
     background-color: #000;
 }
+.spooky{
+    background-image: url('https://www.whatyouneedtowatch.com/wp-content/uploads/2016/04/Blood-dripping-1068x601.jpg');
+    background-size: 300px 300px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: underline;
+}
