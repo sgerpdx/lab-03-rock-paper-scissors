@@ -1,6 +1,3 @@
-export function getRandThrow(){
-    return Math.round(Math.random() * 2);
-}
 
 const paper = 'paper';
 const rock = 'rock';
