@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { getRandThrow } from '/get-random-throw.js';
+import { getRandThrow } from '/utils.js';
 
 const playButton = document.getElementById('play-button');
 const resetButton = document.getElementById('reset-button');
@@ -40,11 +40,15 @@ function convertCompNumToValue(getRandThrow){
 }
 
 function testIfWin(userGuess, compChoice){
-    if (userGuess === compChoice) userDraw = true;
-    if (userGuess === rock && compChoice === scissors) userWin = true;
-    if (userGuess === paper && compChoice === rock) userWin = true;
-    if (userGuess === scissors && compChoice === paper) userWin = true;
-
+    if (userGuess === compChoice) return 'draw';
+    if (userGuess === rock && compChoice === scissors) return 'win';
+    if (userGuess === paper && compChoice === rock) return 'win';
+    if (userGuess === scissors && compChoice === paper){ 
+        return 'win';
+    } else {
+        return 'lose';
+    }
+    /*
     if (userWin){
         totalWins++;
         userWin = false;
@@ -53,6 +57,7 @@ function testIfWin(userGuess, compChoice){
         totalTies++;
         userDraw = false;
     }
+    */
 }
 
  
@@ -66,8 +71,15 @@ playButton.addEventListener('click', () => {
     //set comps choice to the random number returned from getRandThrow()
     let compChoice = convertCompNumToValue(getRandThrow());
     //call to test if user guess was correct
+
     //by default the user will guess the incorrect answer
-    testIfWin(userGuess, compChoice);
+    if (testIfWin(userGuess, compChoice) === 'win') {
+        totalWins++;
+    } else if (testIfWin(userGuess, compChoice) === 'draw'){
+        totalTies++;
+    } else{
+        
+    }
     //declare the strings for the wins, total, and draws
     let winString = `You won: ${totalWins} times!`;
     let totalString = `You played ${totalPlays} times!`;
