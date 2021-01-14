@@ -61,6 +61,7 @@ playButton.addEventListener('click', () => {
     let compChoice = convertCompNumToValue(getRandThrow());
     compDisplay.textContent = `Computer threw: ${compChoice}`;
     playerDisplay.textContent = `You threw: ${userThrow}`;
+    
     //by default the user will guess the incorrect answer
     if (testIfWin(userThrow, compChoice) === 'win') {
         totalWins++;
